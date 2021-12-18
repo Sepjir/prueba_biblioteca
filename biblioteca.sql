@@ -146,4 +146,4 @@ CREATE DATABASE biblioteca;
     SELECT socios.nombre, socios.apellido, socios.rut, SUM (fecha_real_de_devolucion - fecha_devolucion)*100 AS deuda_socios
     FROM prestamos INNER JOIN socios ON socios.rut = prestamos.rut_socio
     GROUP BY socios.rut
-    ORDER BY deuda_socios;
+    ORDER BY deuda_socios DESC;
